@@ -7,20 +7,28 @@
 
 
 {% block content %}
-<div class="p-4">
-  <h2 class="py-2 text-uppercase text-center">Geolocation with Django</h2>
-  <br>
-  {{distance}}
 
-  <hr>
+<div class="p-4">
+  <h1 class="py-2 text-uppercase text-center">Geolocation with Django</h1>
+  <br>
+  
   <form action="" method="POST" autocomplete="off">
     {% csrf_token %}
     {{form|crispy}}
     <button type='submit' class="btn btn-primary">Confirm</button>
   </form>
   <br>
+  {% if distance is not None %}
+    <h4 class="font-weight-bold">Distance to {{ destination }} is: {{distance}} kms</h4> 
+  {% endif %}
+  {{map|safe}}
   <br>
   This product includes GeoLite2 data created by MaxMind, available from
 <a href="https://www.maxmind.com">https://www.maxmind.com</a>.
+
+
+
+  
+
 </div>
 {% endblock content %}
