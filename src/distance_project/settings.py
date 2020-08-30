@@ -126,3 +126,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK ='bootstrap4'
+
+GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
