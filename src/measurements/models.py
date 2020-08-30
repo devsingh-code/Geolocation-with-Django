@@ -9,5 +9,5 @@ class Measurement(models.Model):
     
 
     def __str__(self):
-        return f"{self.location}-{self.destination}"
+        return f"Distance between {self.location}-{self.destination} is {self.distance}"
     
